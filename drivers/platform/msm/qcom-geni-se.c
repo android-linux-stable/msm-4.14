@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
+ * Copyright (c) 2017-2019, The Linux Foundation. All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 and
@@ -698,7 +698,7 @@ int se_geni_clks_off(struct se_geni_rsc *rsc)
 		return -EINVAL;
 
 	geni_se_dev = dev_get_drvdata(rsc->wrapper_dev);
-	if (unlikely(!geni_se_dev || !geni_se_dev->bus_bw))
+	if (unlikely(!geni_se_dev))
 		return -ENODEV;
 
 	clk_disable_unprepare(rsc->se_clk);
@@ -729,7 +729,7 @@ int se_geni_resources_off(struct se_geni_rsc *rsc)
 		return -EINVAL;
 
 	geni_se_dev = dev_get_drvdata(rsc->wrapper_dev);
-	if (unlikely(!geni_se_dev || !geni_se_dev->bus_bw))
+	if (unlikely(!geni_se_dev))
 		return -ENODEV;
 
 	ret = se_geni_clks_off(rsc);
