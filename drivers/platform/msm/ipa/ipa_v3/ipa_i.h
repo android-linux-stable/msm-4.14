@@ -2565,6 +2565,7 @@ int ipa3_uc_send_remote_ipa_info(u32 remote_addr, uint32_t mbox_n);
 void ipa3_tag_destroy_imm(void *user1, int user2);
 const struct ipa_gsi_ep_config *ipa3_get_gsi_ep_info
 	(enum ipa_client_type client);
+bool ipa3_check_idr_if_freed(void *ptr);
 
 /* Hardware stats */
 
